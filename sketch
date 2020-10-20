@@ -1,10 +1,10 @@
 int cols,rows,h,w;
-int scl = 20;
+int scl = 10;
 
 void setup() {
   size(600,600,P3D);
-  w = 600;
-  h = 600;
+  w = 20000;
+  h = 20000;
   cols = w / scl;
   rows = h / scl;
 }
@@ -15,8 +15,10 @@ void draw() {
   stroke(255);
   noFill();
   
+  translate(width/2, height/2);
+  rotateX(PI/3);
   
-  
+  translate(-w/2, -h/2);
   //creating the mesh that will become the terrain
   for(int y = 0; y < cols; y++){
     beginShape(TRIANGLE_STRIP);
